@@ -56,6 +56,10 @@ const getFileNameList = () => {
 
 const generateVueComponent = (fileSource, filename) => {
   let svgSource = '<svg' + fileSource.split('<svg')[1];
+  if (svgSource.includes('fill')) {
+    svgSource = svgSource.replace(/fill(\S*)\"/gi, 'fill="currentColor"');
+  }
+
   let template = `
   <template>
   ${svgSource}
@@ -75,7 +79,7 @@ const generateVueComponent = (fileSource, filename) => {
   }
   `;
 
-  const code = prettier.format(template, { parser: 'vue' });
+  const code = prettier.format(template, { semi: false, singleQuote: true, parser: 'vue' });
 
   fs.writeFileSync(`./${dirname}/${filename}.vue`, code);
   generateFilesNum++;
@@ -88,7 +92,7 @@ const isExistsDir = () => {
 
 const generateEntry = (fileNameList) => {
   let indexSource = fileNameList.map(({ name }) => `export { default as ${name} } from './${name}.vue'`).join('\n');
-  const indexCode = prettier.format(indexSource, { parser: 'typescript' });
+  const indexCode = prettier.format(indexSource, { semi: false, singleQuote: true, parser: 'typescript' });
   fs.writeFileSync(`./${dirname}/index.${!args.includes('--type=js') ? 'ts' : 'js'}`, indexCode);
   if (generateFilesNum === totalFiles) {
     console.log('Components generation succeeded!');
