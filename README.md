@@ -32,3 +32,9 @@ svg-vue
   - Change the file suffix js or ts. The default is ts
     
     example：`svg-vue --type=js`
+
+- `--version` 
+  
+  - Viewing the Version Number
+    
+    example：`svg-vue --version`

@@ -2,6 +2,7 @@ const fs = require('fs');
 const fs_extra = require('fs-extra');
 const prettier = require('prettier');
 const inquirer = require('inquirer');
+const { version } = require('../package.json');
 
 const args = process.argv.slice(2);
 
@@ -111,6 +112,10 @@ const outputFileToFolder = (fileNameList) => {
 };
 
 const run = () => {
+  if (args.includes('--version')) {
+    console.log(version);
+    return;
+  }
   try {
     const fileNameList = getFileNameList();
     if (isExistsDir()) {
