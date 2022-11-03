@@ -12,7 +12,8 @@
     "test": "mocha"
   },
   "bin": {
-    "svg-vue": "./index.js"
+    "svg-vue": "./bin/vue-cli.js",
+    "svg-react": "./bin/react-cli.js"
   },
   "repository": {
     "type": "git",

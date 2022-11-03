@@ -15,8 +15,10 @@ npm install svg-vue-cli -g
 ```shell
 # Go to the directory containing the svg file
 cd ./svgfolder
-# execution instruction
+# execution instruction(Vue component)
 svg-vue
+# execution instruction(React component)
+svg-react
 ```
 
 # command line parameter
