@@ -1,11 +1,12 @@
 {
   "name": "svg-vue-cli",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "index.js",
   "keywords": [
     "svg",
     "vue",
+    "react",
     "cli"
   ],
   "scripts": {
