@@ -1,6 +1,6 @@
 # svg-vue-cli
 
-Use to convert svg files in the current directory to vue components, and create a folder to place the converted vue files, providing the entry file (index.ts).
+Use to convert svg files in the current directory to vue components or react  components, and create a folder to place the converted vue files, providing the entry file (example index.ts).
 
 # Installation
 
